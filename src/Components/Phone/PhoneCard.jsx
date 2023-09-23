@@ -1,6 +1,11 @@
+import { Link, useNavigate } from "react-router-dom";
 
 
 const PhoneCard = ({ phone }) => {
+    const navigate = useNavigate()
+    const handleGoBack = () => {
+        navigate(-1)
+    }
     const { id, phone_name, brand_name, rating, price, image } = phone || {};
     return (
         <div>
@@ -48,6 +53,8 @@ const PhoneCard = ({ phone }) => {
                     </a>
                 </div>
             </div>
+
+            <button onClick={handleGoBack} className="btn btn-primary">Go Back</button>
         </div>
     )
 }

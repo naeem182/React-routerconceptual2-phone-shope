@@ -19,7 +19,7 @@ const Phone = () => {
 
     return (
         <div className='container mx-auto'>
-            <div className=' h-28 bg-slate-100'>
+            <div className=' h-28 bg-slate-100 p-6'>
                 <h2 className='flex justify-center text-2xl font-bold'>Details of <br />
                     {phone.phone_name}</h2>
 
