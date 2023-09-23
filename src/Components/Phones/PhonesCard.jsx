@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 
-const PhoneCard = ({ phone }) => {
+const PhonesCard = ({ phone }) => {
     const { id, phone_name, brand_name, rating, price, image } = phone || {};
 
     return (
@@ -44,4 +44,4 @@ const PhoneCard = ({ phone }) => {
     )
 }
 
-export default PhoneCard
+export default PhonesCard
