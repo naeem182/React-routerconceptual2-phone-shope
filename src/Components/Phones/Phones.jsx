@@ -8,7 +8,7 @@ const Phones = ({ phones }) => {
             <h2 >All Categories Phones</h2>
             <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
                 {
-                    phones?.map((phone) => <PhoneCard key={phone.id}></PhoneCard>)
+                    phones?.map((phone) => <PhoneCard key={phone.id} phone={phone}></PhoneCard>)
                 }
             </div>
         </div>
