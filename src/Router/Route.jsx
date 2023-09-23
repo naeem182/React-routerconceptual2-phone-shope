@@ -5,7 +5,14 @@ import MainLayout from "../Layout/MainLayout"
 const MyCreatedRouter = createBrowserRouter([
     {
         path: '/',
-        element: <MainLayout></MainLayout>
+        element: <MainLayout></MainLayout>,
+        children: [
+            {
+                path: '/',
+                element: <Home></Home>
+
+            }
+        ]
     }
 ])
 export default MyCreatedRouter
