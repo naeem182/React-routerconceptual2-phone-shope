@@ -1,6 +1,15 @@
+import { useContext } from "react"
+import { GlobalContex, GlobalContex2 } from "../../../main"
 
 
 const Login = () => {
+
+    const contexapivalue = useContext(GlobalContex)
+    const contexapivalue2 = useContext(GlobalContex2)
+    console.log("contex value", contexapivalue);
+    console.log("contex value2", contexapivalue2);
+
+
     return (
         <div className="flex items-center justify-center mt-10">
             <div className="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
