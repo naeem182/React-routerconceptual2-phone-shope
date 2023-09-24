@@ -4,7 +4,7 @@ import PhoneCard from './PhoneCard'
 
 const Phone = () => {
     const phones = useLoaderData()
-    console.log(phones)
+    // console.log(phones)
 
     const { id } = useParams()
     const [phone, setphone] = useState({});
@@ -14,7 +14,7 @@ const Phone = () => {
         setphone(findPhone);
     }, [id, phones])
 
-    console.log(phone)
+    // console.log(phone)
 
 
     return (

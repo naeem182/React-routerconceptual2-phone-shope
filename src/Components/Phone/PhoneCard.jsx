@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 
+import swal from 'sweetalert';
 
 const PhoneCard = ({ phone }) => {
     const navigate = useNavigate()
@@ -7,6 +8,33 @@ const PhoneCard = ({ phone }) => {
         navigate(-1)
     }
     const { id, phone_name, brand_name, rating, price, image } = phone || {};
+
+    const handleAddToFavorite = () => {
+        const AddedFavoriteArray = [];
+        const favoriteiteam = JSON.parse(localStorage.getItem('favorite'));
+        //1st e to kisu thakbe na tai 1 ta add hbe ekhane
+        if (!favoriteiteam) {
+            AddedFavoriteArray.push(phone);
+            localStorage.setItem('favorite', JSON.stringify(AddedFavoriteArray))
+            swal("Good job!", "Succesfully Added!", "success");
+        }
+        //kisu thakle
+        else {
+            //check
+            const isExist = favoriteiteam.find(fav => fav.id === id)
+            //jodi age na thake
+            if (!isExist) {
+                AddedFavoriteArray.push(...favoriteiteam, phone)
+                localStorage.setItem('favorite', JSON.stringify(AddedFavoriteArray));
+                swal("Good job!", "Succesfully Added!", "success");
+            }
+            else {
+                swal("Error", "Already Added!", "error");
+            }
+        }
+    }
+
+
     return (
         <div>
             <div className="relative flex w-full max-w-[48rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
@@ -29,7 +57,7 @@ const PhoneCard = ({ phone }) => {
                         ${price}
                     </p>
                     <a className="inline-block" href="#">
-                        <button
+                        <button onClick={handleAddToFavorite}
                             className="flex select-none items-center gap-2 rounded-lg py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                             type="button"
                         >
