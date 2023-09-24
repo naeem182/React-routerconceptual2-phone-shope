@@ -56,7 +56,7 @@ const PhoneCard = ({ phone }) => {
                     <p className="mb-8 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
                         ${price}
                     </p>
-                    <a className="inline-block" href="#">
+                    <Link className="inline-block" to={'/favorite'}>
                         <button onClick={handleAddToFavorite}
                             className="flex select-none items-center gap-2 rounded-lg py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                             type="button"
@@ -78,12 +78,12 @@ const PhoneCard = ({ phone }) => {
                                 ></path>
                             </svg>
                         </button>
-                    </a>
+                    </Link>
                 </div>
             </div>
 
             <button onClick={handleGoBack} className="btn btn-primary">Go Back</button>
-        </div>
+        </div >
     )
 }
 
