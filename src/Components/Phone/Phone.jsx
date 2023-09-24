@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useLoaderData, useParams } from 'react-router-dom'
 import PhoneCard from './PhoneCard'
+import useGetPhones from '../../Hook/useGetPhones'
 
 const Phone = () => {
     const phones = useLoaderData()
+
     // console.log(phones)
+
 
     const { id } = useParams()
     const [phone, setphone] = useState({});
