@@ -1,13 +1,17 @@
 import { useContext } from "react"
 import { GlobalContex, GlobalContex2 } from "../../../main"
+import { useOutletContext } from "react-router-dom"
 
 
 const Login = () => {
-
+    //contex api
     const contexapivalue = useContext(GlobalContex)
     const contexapivalue2 = useContext(GlobalContex2)
-    console.log("contex value", contexapivalue);
-    console.log("contex value2", contexapivalue2);
+    // console.log("contex value", contexapivalue);
+    // console.log("contex value2", contexapivalue2);
+    //outlet contex
+    const fromOutletcontex = useOutletContext()
+    // console.log("fromOutletcontex", fromOutletcontex)
 
 
     return (
